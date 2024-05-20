@@ -168,7 +168,9 @@ def read_measurements_from_csv(file_path):
             me = float(row[12])  # ME column
             mt = float(row[13])  # MT column
             x, y, z = sph2cart(ma, me, mr)  # Convert spherical to Cartesian coordinates
+            print("Cartesian coordinates (x, y, z):", x, y, z)
             r, az, el = cart2sph(x, y, z)  # Convert Cartesian to spherical coordinates
+            print("Spherical coordinates (r, az, el):", r, az, el)
             measurements.append((r, az, el, mt))
     return measurements
 
